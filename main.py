@@ -1,8 +1,8 @@
 import argparse
 import torch.optim as optim
 from model.model import Model
-from model.loss import my_loss
-from model.metric import my_metric, my_metric2
+from model.loss import cat_loss
+from model.metric import cat_metric
 from data_loader.data_loader import DataLoader
 from utils.util import split_validation
 from trainer.trainer import Trainer
@@ -39,7 +39,7 @@ def main(args):
 
     # Specifying loss function, metric(s), and optimizer
     loss = my_loss
-    metrics = [my_metric, my_metric2]
+    metrics = [cat_metric]
     optimizer = optim.Adam(model.parameters())
 
     # Data loader and validation split

@@ -2,8 +2,8 @@ from copy import copy
 import torch
 import numpy as np
 #from torchvision import datasets, transforms
-from .utils import transforms
-from . import datasets
+from utils.transforms import *
+from datasets.CIFAR10 import *
 from base.base_data_loader import BaseDataLoader
 
 class DataLoader(BaseDataLoader):

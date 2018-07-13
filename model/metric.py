@@ -1,19 +1,10 @@
 import numpy as np
 
-
-def my_metric(y_input, y_target):
-    assert len(y_input) == len(y_target)
+def cat_metric(y_pred, y_true):
+    assert len(y_pred) == len(y_true)
     correct = 0
-    for y0, y1 in zip(y_input, y_target):
-        if np.array_equal(y0, y1):
+    for pred, true in zip(y_pred, y_true):
+        if np.array_equal(pred, true):
             correct += 1
-    return correct / len(y_input)
 
-
-def my_metric2(y_input, y_target):
-    assert len(y_input) == len(y_target)
-    correct = 0
-    for y0, y1 in zip(y_input, y_target):
-        if np.array_equal(y0, y1):
-            correct += 1
-    return correct / len(y_input) * 2
+    return correct / len(y_pred)
